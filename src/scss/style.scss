@@ -1,0 +1,19 @@
+@use "header.scss";
+@use "main.scss";
+@use "main-swiper.scss";
+@use "footer.scss";
+@use "burger.scss";
+@use "feedback.scss";
+
+@font-face {
+  font-family: "TT Lakes Light";
+  src: url("/fonts/TTLakes-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "TT Lakes Regular";
+  src: url("/fonts/TTLakes-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "TT Lakes Bold";
+  src: url("/fonts/TTLakes-Bold.woff") format("woff");
+}
