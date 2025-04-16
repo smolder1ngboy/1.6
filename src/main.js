@@ -90,6 +90,7 @@ function createAside(asideId, openButtonId, closeButtonId, shiftAmount) {
   const openButton = document.getElementById(openButtonId);
   const closeButton = document.getElementById(closeButtonId);
   const mainContent = document.querySelector('main');
+  const footerContent = document.querySelector('footer');
 
   let isAsideOpen = false;
 
@@ -97,12 +98,16 @@ function createAside(asideId, openButtonId, closeButtonId, shiftAmount) {
     aside.style.transform = `translateX(${shiftAmount}px)`;
     isAsideOpen = true;
     mainContent.classList.add('blurred');
+    mainContent.style.position = 'fixed'
+    footerContent.style.display = 'none'
   }
 
   function hideAside() {
     aside.style.transform = `translateX(-320px)`;
     isAsideOpen = false;
     mainContent.classList.remove('blurred');
+    mainContent.style.position = 'relative'
+    footerContent.style.display = 'inline'
   }
 
   function shiftAsideLeft() {
@@ -172,6 +177,7 @@ function createFeedback(feedbackId, openButtonIds, closeButtonId) {
   const openButtons = Array.from(document.querySelectorAll(openButtonIds));
   const closeButton = document.getElementById(closeButtonId);
   const mainContent = document.querySelector('main');
+  const footerContent = document.querySelector('footer');
 
   let isFeedbackOpen = false;
 
@@ -180,6 +186,8 @@ function createFeedback(feedbackId, openButtonIds, closeButtonId) {
     feedback.classList.add('feedback--visible');
     isFeedbackOpen = true;
     mainContent.classList.add('blurred');
+    mainContent.style.position = 'fixed'
+    footerContent.style.display = 'none'
 
     function shiftAsideLeft() {
       mainContent.classList.add('blurred');
@@ -203,6 +211,8 @@ function createFeedback(feedbackId, openButtonIds, closeButtonId) {
     feedback.addEventListener('transitionend', function handleTransitionEnd() {
       feedback.style.display = 'none';
       feedback.removeEventListener('transitionend', handleTransitionEnd);
+      mainContent.style.position = 'relative'
+      footerContent.style.display = 'block'
     });
     isFeedbackOpen = false;
     mainContent.classList.remove('blurred');
@@ -229,20 +239,17 @@ function createFeedbackPhone(feedbackId, openButtonIds, closeButtonId) {
   const openButtons = Array.from(document.querySelectorAll(openButtonIds));
   const closeButton = document.getElementById(closeButtonId);
   const mainContent = document.querySelector('main');
+  const footerContent = document.querySelector('footer');
 
   let isFeedbackOpen = false;
 
   function showFeedback() {
-
-    setTimeout(() => {
-      feedback.style.display = 'block';
-      setTimeout(() => {
-        feedback.classList.add('feedback-phone--visible');
-        isFeedbackOpen = true;
-      }, 5);
-
-    }, 5);
+    feedback.style.display = 'block';
+    feedback.classList.add('feedback-phone--visible');
+    isFeedbackOpen = true;
     mainContent.classList.add('blurred');
+    mainContent.style.position = 'fixed'
+    footerContent.style.display = 'none'
 
     function shiftAsideLeft() {
       mainContent.classList.add('blurred');
@@ -266,6 +273,8 @@ function createFeedbackPhone(feedbackId, openButtonIds, closeButtonId) {
     feedback.addEventListener('transitionend', function handleTransitionEnd() {
       feedback.style.display = 'none';
       feedback.removeEventListener('transitionend', handleTransitionEnd);
+      mainContent.style.position = 'relative'
+      footerContent.style.display = 'block'
     });
     isFeedbackOpen = false;
     mainContent.classList.remove('blurred');

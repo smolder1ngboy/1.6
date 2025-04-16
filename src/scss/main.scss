@@ -188,6 +188,10 @@ $green-line-color: #41f6d7;
     height: 208px;
     border-radius: 4px;
   }
+  @media (min-width: 1400px) {
+    width: 531px;
+    height: 307px;
+  }
 }
 
 .heading {
@@ -225,21 +229,6 @@ $green-line-color: #41f6d7;
   @media (min-width: 1120px) {
     position: relative;
     overflow: hidden;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 100px;
-    right: 0;
-    width: 5%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba($white-color, 0) 0%,
-      rgb(255, 255, 255) 100%
-    );
-    pointer-events: none;
   }
 }
 

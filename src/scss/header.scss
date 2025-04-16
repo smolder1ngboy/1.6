@@ -3,10 +3,12 @@ $grey-line-color: #eaeaea;
 $white-color: #fff;
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: $background-color;
   height: 1722px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .header {
@@ -58,10 +60,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
-    height: 1769px;
-  }
-
   .menu {
     &__item-burger {
       margin: 0 20px 0 24px;
@@ -113,10 +111,6 @@ body {
 }
 
 @media (min-width: 1120px) {
-  body {
-    height: 1925px;
-  }
-
   .header__menu {
     display: none;
   }
